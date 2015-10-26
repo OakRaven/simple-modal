@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>Modal Example</title>
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="js/modal.js"></script>
+	<style>
+		#my-modal {
+			background-color: #fff;
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="overlay" style="display: none;"></div>
+	<div id="my-modal" style="display: none; padding: 1em; width: 400px;">
+		This is a modal dialog.  It can be anything you want.  Click the close button to close the modal dialog.
+		<div style="text-align: right; margin-top: 0.5em;">
+			<button type="button" class="close-btn">Close</button>
+		</div>
+	</div>
+	
+	<p>This is a modal example.  Click the button below to open the modal dialog.</p>
+	<p>
+		<button type="button" class="open-btn">Open</button>
+	</p>
+	
+	<script>
+		var myModal = new Modal.Dialog("my-modal");
+		$(function(){
+			$("button.open-btn").click(function(e){
+				myModal.Open();
+			});
+			
+			$("button.close-btn").click(function(e){
+				myModal.Close();
+			});
+		});
+	</script>
+</body>
+
+</html>
